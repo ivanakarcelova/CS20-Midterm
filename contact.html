@@ -23,7 +23,7 @@
 			toReturn = false;
 		}
 		else {
-			$(".form-group .errorMessage").html("&nbsp;");
+			$(".form-group .errorName").html("&nbsp;");
 		}
 		text = document.forms[0].message.value;
 		if (minSize(text, 80)) {
@@ -32,7 +32,7 @@
 			toReturn = false;
 		}
 		else {
-			$(".form-group .errorName").html("&nbsp;");
+			$(".form-group .errorMessage").html("&nbsp;");
 		}
 		if (!toReturn) {
 			return false;
