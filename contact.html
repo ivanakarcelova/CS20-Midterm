@@ -4,10 +4,59 @@
 	<title>Contact Us</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="icon" href="Logo.png">
 </head>
 <body>
+	<script language="javascript">
+
+	$(document).ready(function() {
+		console.log("hello");
+	});
+	function validate() {
+		name = document.forms[0].name.value;
+		locations = ["medford", "boston", "cambridge"]
+		toReturn = true;
+		if (minSize(name, 0)) {
+			$(".form-group .errorName").html("Name is required.");
+			toReturn = false;
+		}
+		else {
+			$(".form-group .errorName").html("&nbsp;");
+		}
+		text = document.forms[0].message.value;
+		if (minSize(text, 80)) {
+			console.log(text.length);
+			$(".form-group .errorMessage").html("Minimum 80 characters required.");
+			toReturn = false;
+		}
+		else {
+			$(".form-group .errorMessage").html("&nbsp;");
+		}
+		loc = document.forms[0].location.value;
+		if (minSize(loc, 0)) {
+			$(".form-group .errorLocation").html("Must enter a location.");
+			toReturn = false;
+		}
+		else if (!locations.includes(loc.toLowerCase())) {
+			$(".form-group .errorLocation").html("Not a valid location, choose one of the three.");
+			toReturn = false;
+		}
+		else {
+			$(".form-group .errorLocation").html("&nbsp;");
+		}
+		if (!toReturn) {
+			return false;
+		}
+		return true;
+	}
+	function minSize(val, size) {
+		return val.length <= size;
+	}
+	</script>
+	
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="#"><img class="the_logo" src="Logo.png"></a>
@@ -26,8 +75,40 @@
 		    </div>
 		  </div>
 		</nav>
+		
 	</div>
-
+	
+	<div class="container">
+		<br>
+		<form onsubmit="return validate()">
+		  <div class="form-group">
+		    <label for="exampleName">Name</label>
+		    <input type="name" name="name" class="form-control" id="exampleName" placeholder="Enter name">
+			<div class='errorName'>&nbsp;</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Email</label>
+		    <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email" required>
+			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <br>
+		  <div class="form-group">
+		    <label for="exampleLocation1">Location (Medford, Cambridge, or Boston)</label>
+		    <input type="location" name="location" class="form-control" id="exampleLocation" placeholder="Enter location">
+			<div class='errorLocation'>&nbsp;</div>
+		  </div>
+		  
+	      <div class="form-group">
+		    <label for="exampleText">Message</label>
+		    <textarea class="form-control" name="message" id="exampleText1" placeholder="Enter question, comment, concern..." rows="5"></textarea>
+			<div class='errorMessage'>&nbsp;</div>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    	<a class="text-reset fw-bold" href="" style="color: #000000;">Boston Squash Club</a>
+  	</div>
 
 </body>
 </html>
