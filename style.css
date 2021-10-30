@@ -1,6 +1,11 @@
 .the_logo {
-	width: 50%; 
-	height: auto; 
+	width: 50%;
+	height: auto;
+}
+
+.card-img-top{
+	width: 30%;
+	height:auto;
 }
 
 .index_font {
