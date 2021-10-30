@@ -17,6 +17,7 @@
 	});
 	function validate() {
 		name = document.forms[0].name.value;
+		locations = ["medford", "boston", "cambridge"]
 		toReturn = true;
 		if (minSize(name, 0)) {
 			$(".form-group .errorName").html("Name is required.");
@@ -33,6 +34,18 @@
 		}
 		else {
 			$(".form-group .errorMessage").html("&nbsp;");
+		}
+		loc = document.forms[0].location.value;
+		if (minSize(loc, 0)) {
+			$(".form-group .errorLocation").html("Must enter a location.");
+			toReturn = false;
+		}
+		else if (!locations.includes(loc.toLowerCase())) {
+			$(".form-group .errorLocation").html("Not a valid location, choose one of the three.");
+			toReturn = false;
+		}
+		else {
+			$(".form-group .errorLocation").html("&nbsp;");
 		}
 		if (!toReturn) {
 			return false;
@@ -79,6 +92,12 @@
 			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 		  </div>
 		  <br>
+		  <div class="form-group">
+		    <label for="exampleLocation1">Location (Medford, Cambridge, or Boston)</label>
+		    <input type="location" name="location" class="form-control" id="exampleLocation" placeholder="Enter location">
+			<div class='errorLocation'>&nbsp;</div>
+		  </div>
+		  
 	      <div class="form-group">
 		    <label for="exampleText">Message</label>
 		    <textarea class="form-control" name="message" id="exampleText1" placeholder="Enter question, comment, concern..." rows="5"></textarea>
