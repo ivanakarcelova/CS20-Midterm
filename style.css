@@ -4,10 +4,16 @@
 }
 
 .card-img-top{
-	width: 30%;
-	height:auto;
+	/* width:400px; */
+	height: 450px;
 }
 
 .index_font {
-	font-family: 'Montserrat', sans-serif; 
+	font-family: 'Montserrat', sans-serif;
+}
+
+.court_pic {
+	align-content: center;
+	width: auto;
+	height: auto;
 }
