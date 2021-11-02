@@ -28,6 +28,7 @@
 	font-size: 20px; 
 	padding-top: 20px;
 	padding-bottom: 20px;
+	text-align: center; 
 }
 
 .court {
@@ -58,6 +59,3 @@
 	margin-top: 50px;
 }
 
-.contact_button:hover {
-	background-color: #85BEE8;
-}
