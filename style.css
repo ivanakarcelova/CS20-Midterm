@@ -62,3 +62,11 @@
 .membership {
 	padding-top: 20px; 
 }
+
+.navbar-nav {
+	font-size: 20px; 
+}
+
+.court:hover {
+	font-size: 40px;  
+}
