@@ -49,3 +49,15 @@
 	margin-right: 200px; 
 	margin-left: 200px;
 }
+
+.programs {
+	margin-bottom: 50px;
+}
+
+.history {
+	margin-top: 50px;
+}
+
+.contact_button:hover {
+	background-color: #85BEE8;
+}
