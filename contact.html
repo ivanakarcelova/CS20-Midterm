@@ -34,32 +34,45 @@
 		locations = ["medford", "boston", "cambridge"]
 		toReturn = true;
 		if (minSize(name, 0)) {
-			$(".form-group .errorName").html("Name is required.");
+			$(".form-group .errorName").fadeOut(function() {
+				$(this).text("Name is required.").fadeIn();
+			});
 			toReturn = false;
 		}
 		else {
-			$(".form-group .errorName").html("&nbsp;");
+			$(".form-group .errorName").fadeOut(function() {
+				$(this).text("").fadeIn();
+			});
 		}
 		text = document.forms[0].message.value;
 		if (minSize(text, 80)) {
-			console.log(text.length);
-			$(".form-group .errorMessage").html("Minimum 80 characters required.");
+			$(".form-group .errorMessage").fadeOut(function() {
+				$(this).text("Minimum 80 characters required.").fadeIn();
+			});
 			toReturn = false;
 		}
 		else {
-			$(".form-group .errorMessage").html("&nbsp;");
+			$(".form-group .errorMessage").fadeOut(function() {
+				$(this).text("").fadeIn();
+			});
 		}
 		loc = document.forms[0].location.value;
 		if (minSize(loc, 0)) {
-			$(".form-group .errorLocation").html("Must enter a location.");
+			$(".form-group .errorLocation").fadeOut(function() {
+				$(this).text("Must enter a location.").fadeIn();
+			});
 			toReturn = false;
 		}
 		else if (!locations.includes(loc.toLowerCase())) {
-			$(".form-group .errorLocation").html("Not a valid location, choose one of the three.");
+			$(".form-group .errorLocation").fadeOut(function() {
+				$(this).text("Not a valid location, choose one of the three.").fadeIn();
+			});
 			toReturn = false;
 		}
 		else {
-			$(".form-group .errorLocation").html("&nbsp;");
+			$(".form-group .errorLocation").fadeOut(function() {
+				$(this).text("").fadeIn();
+			});
 		}
 		if (!toReturn) {
 			return false;
