@@ -17,3 +17,15 @@
 	width: auto;
 	height: auto;
 }
+
+.schedule {
+	padding-top: 20px;
+	text-align: center; 
+	padding-bottom: 20px; 
+}
+
+.google {
+	font-size: 20px; 
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
