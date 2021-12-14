@@ -107,10 +107,11 @@
 
 
 	<div class="container">
+		<iframe style="display:none;" name="target"></iframe>
 		<h1>Contact</h1>
 		<h2 class="description">Please fill out the form below to be contacted by our staff.</h2>
 		<br>
-		<form onsubmit="return validate()">
+		<form id="contactForm" onsubmit="return validate()" action="contact.php" target="target">
 		  <div class="form-group">
 		    <label for="exampleName">Name</label>
 		    <input type="name" name="name" class="form-control" id="exampleName" placeholder="Enter name">
